@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var $hsTable = $('<div>');
+	var $hsTable = $('<div class="handsontable">');
 	$('form[name=frmModHOST]').hide();
 	
 	$('form[name=frmModHOST]').before($hsTable);
