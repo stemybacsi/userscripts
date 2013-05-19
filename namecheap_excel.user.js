@@ -4,38 +4,45 @@
 // @include      https://*manage.www.namecheap.com/*
 // @author       Stemy
 // @description  A namecheap.com webhely domain beállításait könnyebb vele módosítani
-// @version      1.0.4
+// @version      1.0.6
 // ==/UserScript==
 
-var $;
+function requireFiles() 
+{
+    //array to hold the external libabry paths
+    var libFiles = [
+		{type: "css", src: "https://raw.github.com/warpech/jquery-handsontable/master/jquery.handsontable.css"},
+		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/jquery-2.0.0.min.js"},
+		{type: "js", src: "https://raw.github.com/warpech/jquery-handsontable/master/jquery.handsontable.js"},
+		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/namecheap_excel_main.js"},
+	];
 
-// Add jQuery
-    (function(){
-        if (typeof unsafeWindow.jQuery == 'undefined') {
-            var GM_Head = document.getElementsByTagName('head')[0] || document.documentElement,
-                GM_JQ = document.createElement('script');
-    
-            GM_JQ.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
-            GM_JQ.type = 'text/javascript';
-            GM_JQ.async = true;
-    
-            GM_Head.insertBefore(GM_JQ, GM_Head.firstChild);
-        }
-        GM_wait();
-    })();
-
-// Check if jQuery's loaded
-    function GM_wait() {
-        if (typeof unsafeWindow.jQuery == 'undefined') {
-            window.setTimeout(GM_wait, 100);
-        } else {
-            $ = unsafeWindow.jQuery.noConflict(true);
-            letsJQuery();
-        }
+    var index = 0;
+    var requireNext = function() 
+    {
+        var fileref;
+        if (index < libFiles.length) 
+        {
+			if (libFiles[index].type == "js"){ //if filename is a external JavaScript file
+				fileref = document.createElement('script');
+				fileref.setAttribute("type","text/javascript");
+				fileref.setAttribute("src", libFiles[index].src);
+			} else if (libFiles[index].type == "css") { //if filename is an external CSS file
+				fileref = document.createElement("link");
+				fileref.setAttribute("rel", "stylesheet");
+				fileref.setAttribute("type", "text/css");
+				fileref.setAttribute("href", libFiles[index].src);
+			}
+			if (typeof fileref != "undefined") {
+				fileref.addEventListener("load", requireNext);
+				document.getElementsByTagName("head")[0].appendChild(fileref);
+			} else {
+				requireNext();
+			}
+			index++;
+        } 
     }
+    requireNext();
+}
 
-// All your GM code must be inside this function
-    function letsJQuery() {
-        alert($); // check if the dollar (jquery) function works
-        alert($().jquery); // check jQuery version
-    }
+requireFiles();

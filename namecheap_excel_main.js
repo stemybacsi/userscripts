@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  alert("blabla");
+	$('form[name=frmModHOST]').fadeOut();
 });
