@@ -20,7 +20,7 @@ $(document).ready(function() {
 			{data: "id", type: 'text'},
 			{data: "name", type: 'text'},
 			{data: "isActive", type: 'checkbox'},
-			{data: "date", type: 'date'},
+			{data: "date", type: 'text'},
 			{data: "color",
 			  type: 'autocomplete',
 			  source: ["yellow", "red", "orange", "green", "blue", "gray", "black", "white"]
