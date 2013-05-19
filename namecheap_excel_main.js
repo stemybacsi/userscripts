@@ -2,7 +2,7 @@ $(document).ready(function() {
 	var $hsTable = $('<div>');
 	$('form[name=frmModHOST]').hide();
 	
-	$('form[name=frmModHOST]').before(hsTable);
+	$('form[name=frmModHOST]').before($hsTable);
 	
 	var data = [
 		{id: 1, name: "Ted", isActive: true, color: "orange", date: "2008-01-01"},
