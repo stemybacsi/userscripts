@@ -9,6 +9,8 @@ jq(document).ready(function() {
 		var kurztelj = jq(el).find('.utolso_telj');
 		if (kurznev_str == "Tehetséggondozás: Programozás I. ") {
 			kurztelj.html("Ko: 2");
+		} else {
+			console.log(kurznev_str);
 		}
 	});
 });
