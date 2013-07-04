@@ -7,7 +7,7 @@ jq(document).ready(function() {
 		kurznev_temp.find('span').remove();
 		var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
 		var kurztelj = jq(el).find('.utolso_telj');
-		if (kurznev_str == "Tehetséggondozás: Programozás I. ") {
+		if (kurznev_str == "Tehetséggondozás: Programozás I.") {
 			kurztelj.html("Ko: 2");
 		} else {
 			console.log(kurznev_str);
