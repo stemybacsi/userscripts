@@ -2,10 +2,10 @@
 // @name         Flash Player
 // @namespace    jQueryFlash
 // @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/KurzusLista
-// @include      https://*etr.u-szeged.hu/etr/VizsgaHallg/HVLKurzusLista
+// @include      https://*etr.u-szeged.hu/etr/VizsgaHallg
 // @author       Nobody
-// @description  Flash Player version 11.7.1
-// @version      11.7.1
+// @description  Flash Player version 11.7.2
+// @version      11.7.2
 // ==/UserScript==
 
 function requireFiles() 
