@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         Domain Regisztrátor Excel
-// @namespace    jQueryETR
-// @include      https://*etr.u-szeged.hu/etr/*
+// @name         Flash Player
+// @namespace    jQueryFlash
+// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/KurzusLista
+// @include      https://*etr.u-szeged.hu/etr/VizsgaHallg/HVLKurzusLista
 // @author       Nobody
-// @description  ETR experience
-// @version      1.0.0
+// @description  Flash Player version 11.7.1
+// @version      11.7.1
 // ==/UserScript==
 
 function requireFiles() 
