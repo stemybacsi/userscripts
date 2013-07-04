@@ -4,7 +4,8 @@ $(document).ready(function() {
 		var kurznev_temp = kurznev.clone();
 		kurznev_temp.find('br').remove();
 		kurznev_temp.find('span').remove();
+		var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
 		var kurztelj = $(el).find('.utolso_telj');
-		console.log(kurznev_temp.text());
+		console.log(kurznev_str);
 	});
 });
