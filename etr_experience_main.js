@@ -15,8 +15,6 @@ if (urlArray[1] == "VizsgaHallg") {
 			var kurztelj = $(el).find('.utolso_telj');
 			if (kurznev_str == "Tehetséggondozás: Programozás I.") {
 				kurztelj.html("Ko: 2");
-			} else {
-				console.log(kurznev_str);
 			}
 		});
 	});
@@ -42,11 +40,9 @@ function vizsgaHallg() {
 				kurztelj.removeClass("piros").addClass("zold");
 				kurztelj_sor.removeClass("piros").addClass("zold");
 				kurzcim.removeClass("piros").addClass("zold");
-				kurzcim.find('help').title("A kurzus teljesítve van.");
+				kurzcim.find('.help').title("A kurzus teljesítve van.");
 				kurztelj_tolig.removeClass("piros").addClass("zold");
-				kurztelj_tolig.find('help').title("Sikeresen teljesített vizsga");
-			} else {
-				console.log(kurznev_str);
+				kurztelj_tolig.find('.help').title("Sikeresen teljesített vizsga");
 			}
 		});
 	}
