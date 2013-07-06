@@ -39,9 +39,10 @@ function vizsgaHallg() {
 				var kurztelj_tolig = kurztelj_sor.find('.tol_ig_td');
 				//Felülírás
 				kurztelj.html(" Ko: <span>elégséges (2)</span>");
-				kurzcim.removeClass("piros").addClass("zold");
 				kurztelj.removeClass("piros").addClass("zold");
 				kurztelj_sor.removeClass("piros").addClass("zold");
+				kurzcim.removeClass("piros").addClass("zold");
+				kurzcim.find('help').title("A kurzus teljesítve van.");
 				kurztelj_tolig.removeClass("piros").addClass("zold");
 				kurztelj_tolig.find('help').title("Sikeresen teljesített vizsga");
 			} else {
