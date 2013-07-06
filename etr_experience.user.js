@@ -11,10 +11,9 @@
 function requireFiles() 
 {
     //array to hold the external libabry paths
-	
+	//		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/jquery-2.0.0.min.js"},
 	var libFiles = [
-		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/jquery-2.0.0.min.js"},
-		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/etr_experience_main.js"},
+		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/etr_experience_main.js"}
 	];
 
     var index = 0;
