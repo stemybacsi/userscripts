@@ -1,7 +1,6 @@
 var jq = jQuery.noConflict();
-alert(document.URL);
-alert(window.location);
-alert(window.location.href);
+var urlArray = window.location.href.split('/etr/');
+alert(urlArray[1]);
 jq(document).ready(function() {
 	//Kurzuslista
 	jq.each(jq('.kurz_ul .vegleges_kurz'), function(ind, el) {
