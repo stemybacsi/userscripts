@@ -3,7 +3,7 @@ var urlArray = window.location.href.split('/etr/');
 if (urlArray[1] == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	//var jq = jQuery.noConflict();
-	($('ul').length);
+	console.log($('ul').length);
 	/*$.each(jq('.hvl_kurzus_lista .kurzus_div'), function(ind, el) {
 		var kurznev = jq(el).find('.kurzus_div_head b');
 		var kurznev_str = kurznev.text();
