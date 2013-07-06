@@ -23,12 +23,9 @@ if (urlArray[1] == "VizsgaHallg") {
 }
 
 function vizsgaHallg() {
-	var kurzus_lista = $('.hvl_kurzus_lista .kurzus_div');
-	console.log("VizsgaHallg");
-	console.log(kurzus_lista);
+	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
 	if (kurzus_lista.length == 0) {
-		console.log("Újpróba");
-		setTimeout(vizsgaHallg, 50);
+		setTimeout(vizsgaHallg, 100);
 	} else {
 		$.each(kurzus_lista, function(ind, el) {
 			var kurzcim = $(el).find('.kurzus_div_head');
