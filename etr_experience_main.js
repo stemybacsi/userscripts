@@ -40,9 +40,9 @@ function vizsgaHallg() {
 				kurztelj.removeClass("piros").addClass("zold");
 				kurztelj_sor.removeClass("piros").addClass("zold");
 				kurzcim.removeClass("piros").addClass("zold");
-				kurzcim.find('.help').title("A kurzus teljesítve van.");
+				kurzcim.find('.help').attr("title", "A kurzus teljesítve van.");
 				kurztelj_tolig.removeClass("piros").addClass("zold");
-				kurztelj_tolig.find('.help').title("Sikeresen teljesített vizsga");
+				kurztelj_tolig.find('.help').attr("title", "Sikeresen teljesített vizsga");
 			}
 		});
 	}
