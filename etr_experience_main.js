@@ -24,15 +24,23 @@ if (urlArray[1] == "VizsgaHallg") {
 
 function vizsgaHallg() {
 	var kurzus_lista = $('.hvl_kurzus_lista .kurzus_div');
+	console.log("VizsgaHallg");
+	console.log(kurzus_lista);
 	if (kurzus_lista.length == 0) {
+		console.log("Újpróba");
 		setTimeout(vizsgaHallg, 50);
 	} else {
 		$.each(kurzus_lista, function(ind, el) {
-			var kurznev = $(el).find('.kurzus_div_head b');
+			var kurzcim = $(el).find('.kurzus_div_head');
+			var kurznev = kurzcim.find('b');
 			var kurznev_str = kurznev.text();
 			var kurztelj = $(el).find('.meglevo_jegy').last();
+			var kurztelj_sor = kurztelj.parent().parent();
 			
 			if (kurznev_str == "Tehetséggondozás: Programozás I.") {
+				kurzcim.removeClass("piros").addClass("zold");
+				kurztelj.removeClass("piros").addClass("zold");
+				kurztelj_sor.removeClass("piros").addClass("zold");
 				kurztelj.html(" Ko: <span>elégséges (2)</span>");
 			} else {
 				console.log(kurznev_str);
