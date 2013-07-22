@@ -21,7 +21,7 @@ $(document).ready(function() {
 			$szamlalo.text(ujszoveg());
 		} else {
 			clearInterval(interval);
+			window.location = window.location.href;
 		}
-		window.location = window.location.href;
 	}, 1000);
 });
