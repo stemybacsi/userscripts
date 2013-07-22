@@ -1,7 +1,6 @@
-var interval = null;
-var mins = 2;
-var secs = mins * 60;
 var $szamlalo = null;
+var interval = null;
+var secs = 90;
 
 function ujszoveg() {
 	console.log(secs);
@@ -18,8 +17,8 @@ $(document).ready(function() {
 	$szamlalo.text(ujszoveg());
 	interval = setInterval(function(){
 		if (secs > 0) {
-			$szamlalo.text(ujszoveg());
 			secs--;
+			$szamlalo.text(ujszoveg());
 		} else {
 			clearInterval(interval);
 			window.location = window.location.href;
