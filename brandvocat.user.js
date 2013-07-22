@@ -1,12 +1,11 @@
 // ==UserScript==
-// @name         Flash Player
-// @namespace    jQueryFlash
-// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/KurzusLista
-// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/Kurzuslista
-// @include      https://*etr.u-szeged.hu/etr/VizsgaHallg
-// @author       Nobody
-// @description  Flash Player version 11.7.3
-// @version      11.7.3
+// @name         BrandVocat szkript
+// @namespace    jQueryBrandVocat
+// @include      *brandvocat.com/challenges/*
+// @include      http://localhost/cube/
+// @author       Stemy
+// @description  Biciklit akarok
+// @version      1.0.0
 // ==/UserScript==
 
 function requireFiles() 
@@ -14,7 +13,7 @@ function requireFiles()
     //array to hold the external libabry paths
 	//		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/jquery-2.0.0.min.js"},
 	var libFiles = [
-		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/etr_experience_main.js"}
+		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/brandvocat_main.js"}
 	];
 
     var index = 0;
