@@ -3,4 +3,4 @@ $(document).ready(function() {
 	setInterval(function(){
 		window.location = window.location.href;
 	}, 10000);
-}
+});
