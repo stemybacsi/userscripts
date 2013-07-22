@@ -12,7 +12,7 @@ $(document).ready(function() {
 	var mins = 2;
 	$('.share_post a').click();
 	$('.header_rank_container').append(function() {
-		return '<div class="header_top_rank_company" id="frissszamlalo">'.ujszoveg().'</div>';
+		return '<div class="header_top_rank_company" id="frissszamlalo">'+ujszoveg()+'</div>';
 	});
 	$szamlalo = $('#frissszamlalo');
 	$szamlalo.text(ujszoveg());
