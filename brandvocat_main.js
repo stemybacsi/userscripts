@@ -4,8 +4,8 @@ var secs = mins * 60;
 var $szamlalo = null;
 
 function ujszoveg() {
+	console.log(secs);
 	return 'Frissítés '+secs+' másodperc múlva...';
-	secs--;
 }
 
 $(document).ready(function() {
@@ -19,6 +19,7 @@ $(document).ready(function() {
 	interval = setInterval(function(){
 		if (secs > 0) {
 			$szamlalo.text(ujszoveg());
+			secs--;
 		} else {
 			clearInterval(interval);
 			window.location = window.location.href;
