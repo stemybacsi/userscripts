@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         BrandVocat szkript
 // @namespace    jQueryBrandVocat
-// @include      *brandvocat.com/challenges/*
+// @include      *brandvocat.com/challenge/*
 // @include      http://localhost/cube/
 // @author       Stemy
 // @description  Biciklit akarok
-// @version      1.0.0
+// @version      1.0.1
 // ==/UserScript==
 
 function requireFiles() 
