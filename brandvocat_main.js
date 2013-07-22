@@ -3,7 +3,6 @@ var interval = null;
 var secs = 90;
 
 function ujszoveg() {
-	console.log(secs);
 	return 'Frissítés '+secs+' másodperc múlva...';
 }
 
