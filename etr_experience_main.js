@@ -19,22 +19,21 @@ if (urlArray[1] == "VizsgaHallg") {
 		});
 		$.each($('#kurzus_atjel table'), function(ind, el) {
 			var tabla = $(el);
-			var fejlec = tabla.find('.fejlec2');
-			tabla.find('tr').eq(0).remove();
-			tabla.find('tbody').before($('thead').append(fejlec.clone()));
-			fejlec.remove();
+			$.each(tabla.find('tr'), function(tr_ind, tr_el) {
+				var oszlopok = $(tr_el).find('td');
+				if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
+					console.log($(tr_el).attr("class"));
+					var idopont = oszlopok.eq(7);
+					var ip_str = idopont.attr("title");
+					var p1 = ip_str.indexOf("{Kért: ");
+					var p2 = ip_str.indexOf("] ");
+					idopont.html(ip_str.substring(p1 + 7, p2 + 1));
+				} else {
+					//$(tr_el).remove();
+				}
+			});
 		});
-		$.each($('#kurzus_atjel tr'), function(ind, el) {
-			var oszlopok = $(el).find('td');
-			if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
-				var idopont = oszlopok.eq(7);
-				var ip_str = idopont.attr("title");
-				var p1 = ip_str.indexOf("{Kért: ");
-				var p2 = ip_str.indexOf("] ");
-				idopont.html(ip_str.substring(p1 + 7, p2 + 1));
-			}
-		});
-		$('#kurzus_atjel table').dataTable();
+		//$('#kurzus_atjel table').dataTable();
 	});
 }
 
