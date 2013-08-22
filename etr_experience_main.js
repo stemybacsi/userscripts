@@ -23,7 +23,7 @@ if (urlArray[1] == "VizsgaHallg") {
 				var idopont = oszlopok.eq(7);
 				var ip_str = idopont.attr("title");
 				var p1 = ip_str.indexOf(" {");
-				var p2 = ip_str.indexOf(" ");
+				var p2 = ip_str.indexOf("] ");
 				idopont.html(ip_str.substring(p1 + 2, p2));
 			}
 		});
