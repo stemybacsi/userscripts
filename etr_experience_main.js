@@ -19,11 +19,9 @@ if (urlArray[1] == "VizsgaHallg") {
 		});
 		$.each($('#kurzus_atjel table'), function(ind, el) {
 			var tabla = $(el);
-			if (ind > 0) {
-				tabla.find('td:eq(0)').remove();
-			}
 			var fejlec = tabla.find('.fejlec2');
-			tabla.find('tbofy').before($('thead').append(fejlec.clone()));
+			tabla.find('tr').eq(0).remove();
+			tabla.find('tbody').before($('thead').append(fejlec.clone()));
 			fejlec.remove();
 		});
 		$.each($('#kurzus_atjel tr'), function(ind, el) {
