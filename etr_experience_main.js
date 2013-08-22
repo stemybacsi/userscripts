@@ -22,7 +22,7 @@ if (urlArray[1] == "VizsgaHallg") {
 			if (ind > 0) {
 				tabla.find('td:eq(0)').remove();
 			}
-			var fejlec = tabla.find('fejlec2');
+			var fejlec = tabla.find('.fejlec2');
 			tabla.find('tbofy').before($('thead').append(fejlec.copy()));
 			fejlec.remove();
 		});
