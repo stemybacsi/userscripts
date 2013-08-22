@@ -23,7 +23,9 @@ if (urlArray[1] == "VizsgaHallg") {
 				var sor = $(tr_el);
 				if (tr_ind == 0) {
 					sor.remove();
-				} else if (sor.hasClass("fejlec2")) {
+				} else if (tr_ind == 1 && !sor.hasClass("fejlec2")) {
+					sor.remove();
+				} if (sor.hasClass("fejlec2")) {
 					var header = $('<thead>');
 					var header_sor = $('<tr>');
 					var th;
