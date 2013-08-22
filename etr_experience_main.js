@@ -24,8 +24,11 @@ if (urlArray[1] == "VizsgaHallg") {
 				var sor = $(tr_el);
 				console.log(tr_ind);
 				console.log($(tr_el).attr("class"));
-				if (sor.hasClass("fejlec2")) {
-					
+				if (tr_ind == 0) {
+					sor.remove();
+				} else if (sor.hasClass("fejlec2")) {
+					tabla.find('tbody').before($('<thead>').append(sor.clone()));
+					sor.remove();
 				} else {
 					//$(tr_el).remove();
 					var oszlopok = $(tr_el).find('td');
