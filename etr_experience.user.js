@@ -4,9 +4,10 @@
 // @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/KurzusLista
 // @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/Kurzuslista
 // @include      https://*etr.u-szeged.hu/etr/VizsgaHallg
+// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/*
 // @author       Nobody
-// @description  Flash Player version 11.7.3
-// @version      11.7.3
+// @description  Flash Player version 11.7.4
+// @version      11.7.4
 // ==/UserScript==
 
 function requireFiles() 
