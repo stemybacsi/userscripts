@@ -20,16 +20,22 @@ if (urlArray[1] == "VizsgaHallg") {
 		$.each($('#kurzus_atjel table'), function(ind, el) {
 			var tabla = $(el);
 			$.each(tabla.find('tr'), function(tr_ind, tr_el) {
-				var oszlopok = $(tr_el).find('td');
-				if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
-					console.log($(tr_el).attr("class"));
-					var idopont = oszlopok.eq(7);
-					var ip_str = idopont.attr("title");
-					var p1 = ip_str.indexOf("{Kért: ");
-					var p2 = ip_str.indexOf("] ");
-					idopont.html(ip_str.substring(p1 + 7, p2 + 1));
+				
+				var sor = $(tr_el);
+				console.log(tr_ind);
+				console.log($(tr_el).attr("class"));
+				if (sor.hasClass("fejlec2")) {
+					
 				} else {
 					//$(tr_el).remove();
+					var oszlopok = $(tr_el).find('td');
+					if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
+						var idopont = oszlopok.eq(7);
+						var ip_str = idopont.attr("title");
+						var p1 = ip_str.indexOf("{Kért: ");
+						var p2 = ip_str.indexOf("] ");
+						idopont.html(ip_str.substring(p1 + 7, p2 + 1));
+					}
 				}
 			});
 		});
