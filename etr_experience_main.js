@@ -17,8 +17,8 @@ if (urlArray[1] == "VizsgaHallg") {
 				kurztelj.html("Ko: 2");
 			}
 		});
-		$.each($('#kurzus_atjel table'), function(ind, el) {
-			var tabla = $(el);
+		$.each($('#kurzus_atjel table'), function(table_ind, table_el) {
+			var tabla = $(table_el);
 			$.each(tabla.find('tr'), function(tr_ind, tr_el) {
 				var sor = $(tr_el);
 				if (tr_ind == 0) {
@@ -38,7 +38,7 @@ if (urlArray[1] == "VizsgaHallg") {
 				} else {
 					var oszlopok = $(tr_el).find('td');
 					if (oszlopok.length > 1) {
-						var idopont = oszlopok.eq(7);
+						var idopont = (table_ind == 0) ? oszlopok.eq(6):oszlopok.eq(7);
 						var ip_str = idopont.attr("title");
 						var p1 = ip_str.indexOf("{Kért: ");
 						var p2 = ip_str.indexOf("] ");
