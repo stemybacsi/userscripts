@@ -17,6 +17,15 @@ if (urlArray[1] == "VizsgaHallg") {
 				kurztelj.html("Ko: 2");
 			}
 		});
+		$.each($('#kurzus_atjel table'), function(ind, el) {
+			var tabla = $(el);
+			if (ind > 0) {
+				tabla.find('td:eq(0)').remove();
+			}
+			var fejlec = tabla.find('fejlec2');
+			tabla.find('tbofy').before($('thead').append(fejlec.copy()));
+			fejlec.remove();
+		});
 		$.each($('#kurzus_atjel tr'), function(ind, el) {
 			var oszlopok = $(el).find('td');
 			if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
