@@ -20,17 +20,20 @@ if (urlArray[1] == "VizsgaHallg") {
 		$.each($('#kurzus_atjel table'), function(ind, el) {
 			var tabla = $(el);
 			$.each(tabla.find('tr'), function(tr_ind, tr_el) {
-				
 				var sor = $(tr_el);
-				console.log(tr_ind);
-				console.log($(tr_el).attr("class"));
 				if (tr_ind == 0) {
 					sor.remove();
 				} else if (sor.hasClass("fejlec2")) {
-					tabla.find('tbody').before($('<thead>').append(sor.clone()));
+					var header = $('<thead>');
+					var header_sor = $('<tr>');
+					var th;
+					$.each(sor.find('td'), function(td_ind, td_el) {
+						th = '<th class="fejlec">'+$(td_el).html()+'</th>';
+						header_sor.append(th);
+					});
+					tabla.find('tbody').before(header.append(header_sor));
 					sor.remove();
 				} else {
-					//$(tr_el).remove();
 					var oszlopok = $(tr_el).find('td');
 					if (oszlopok.length > 1 && oszlopok.eq(0).hasClass("muv1")) {
 						var idopont = oszlopok.eq(7);
@@ -42,7 +45,7 @@ if (urlArray[1] == "VizsgaHallg") {
 				}
 			});
 		});
-		//$('#kurzus_atjel table').dataTable();
+		$('#kurzus_atjel table').dataTable();
 	});
 }
 
