@@ -27,8 +27,10 @@ if (urlArray[1] == "VizsgaHallg") {
 					var header = $('<thead>');
 					var header_sor = $('<tr>');
 					var th;
+					var tart;
 					$.each(sor.find('td'), function(td_ind, td_el) {
-						th = '<th class="fejlec">'+$(td_el).html()+'</th>';
+						tart = $(td_el).html();
+						th = '<th class="fejlec">'+((tart == " ") ? "Jelöl":tart)+'</th>';
 						header_sor.append(th);
 					});
 					tabla.find('tbody').before(header.append(header_sor));
