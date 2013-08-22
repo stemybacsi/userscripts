@@ -27,6 +27,7 @@ if (urlArray[1] == "VizsgaHallg") {
 				idopont.html(ip_str.substring(p1 + 7, p2 + 1));
 			}
 		});
+		$('#kurzus_atjel table').dataTable();
 	});
 }
 
