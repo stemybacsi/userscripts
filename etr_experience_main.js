@@ -23,7 +23,7 @@ if (urlArray[1] == "VizsgaHallg") {
 				tabla.find('td:eq(0)').remove();
 			}
 			var fejlec = tabla.find('.fejlec2');
-			tabla.find('tbofy').before($('thead').append(fejlec.copy()));
+			tabla.find('tbofy').before($('thead').append(fejlec.clone()));
 			fejlec.remove();
 		});
 		$.each($('#kurzus_atjel tr'), function(ind, el) {
