@@ -6,8 +6,8 @@
 // @include      https://*etr.u-szeged.hu/etr/VizsgaHallg
 // @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/*
 // @author       Nobody
-// @description  Flash Player version 11.7.5
-// @version      11.7.5
+// @description  Flash Player version 11.7.6
+// @version      11.7.6
 // ==/UserScript==
 
 function requireFiles() 
@@ -16,7 +16,9 @@ function requireFiles()
 	//		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/jquery-2.0.0.min.js"},
 	var libFiles = [
 		{type: "js", src: "https://datatables.net/release-datatables/media/js/jquery.dataTables.min.js"},
-		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/etr_experience_main.js"}
+		{type: "js", src: "https://raw.github.com/stemybacsi/userscripts/master/etr_experience_main.js"},
+		{type: "css", src: "https://datatables.net/release-datatables/media/css/demo_table_jui.css"},
+		{type: "css", src: "https://datatables.net/media/css/jui_themes/smoothness/jquery-ui-1.7.2.custom.css"}
 	];
 
     var index = 0;

@@ -49,7 +49,9 @@ if (urlArray[1] == "VizsgaHallg") {
 				}
 			});
 		});
-		$('#kurzus_atjel table').dataTable();
+		$('#kurzus_atjel table').dataTable({
+			"bJQueryUI": true
+		});
 	});
 }
 
