@@ -56,6 +56,7 @@ if (oldal == "VizsgaHallg") {
 
 function vizsgaHallg() {
 	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
+	console.log("vizsgaHallg: " + kurzus_lista.length);
 	if (kurzus_lista.length == 0) {
 		console.log("javit vizsgaHallg");
 		setTimeout(vizsgaHallg, 100);
@@ -85,6 +86,7 @@ function vizsgaHallg() {
 
 function kurzLista() {
 	var kurzus_lista = $('.kurz_ul .vegleges_kurz');
+	console.log("kurzLista: " + kurzus_lista.length);
 	if (kurzus_lista.length == 0) {
 		console.log("javit kurzLista");
 		setTimeout(kurzLista, 100);
