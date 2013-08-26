@@ -60,7 +60,7 @@ if (oldal == "VizsgaHallg") {
 }
 
 function filterReload() {
-	var tmpText = $('#hallg_ker_info_sav').text();
+	var tmpText = $('#hallg_ker_info_sav a').text();
 	console.log("filterReload: " + tmpText);
 	if (filterText == tmpText) {
 		console.log("javit filterReload");
