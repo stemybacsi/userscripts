@@ -3,6 +3,7 @@ var oldal = urlArray[0];
 var aloldal = urlArray[1];
 var vizsgaHallgText = "";
 var kurzListaText = "";
+var filterText = "";
 
 //Melyik oldalon vagyunk
 if (oldal == "VizsgaHallg") {
@@ -10,6 +11,7 @@ if (oldal == "VizsgaHallg") {
 	vizsgaHallg();
 	$(document).ready(function() {
 		$("#szur_gomb_a").click(vizsgaHallg);
+		$("#filter_Ciklus").change(filterReload);
 	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
@@ -57,6 +59,18 @@ if (oldal == "VizsgaHallg") {
 	});
 }
 
+function filterReload() {
+	var tmpText = $('#hallg_ker_info_sav').text();
+	if (filterText == tmpText) {
+		console.log("javit filterReload");
+		setTimeout(filterReload, 100);
+	} else {
+		filterText = tmpText;
+		$("#szur_gomb_a").click(vizsgaHallg);
+		$("#filter_Ciklus").change(filterReload);
+	}
+}
+
 function vizsgaHallg() {
 	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
 	var tmpText = "";
@@ -69,7 +83,6 @@ function vizsgaHallg() {
 		setTimeout(vizsgaHallg, 100);
 	} else {
 		vizsgaHallgText = tmpText;
-		$("#szur_gomb_a").click(vizsgaHallg);
 		$.each(kurzus_lista, function(ind, el) {
 			var kurzcim = $(el).find('.kurzus_div_head');
 			var kurznev = kurzcim.find('b');
