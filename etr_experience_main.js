@@ -8,7 +8,7 @@ if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
 	$(document).ready(function() {
-		$("#szur_gomb_a").click(vizsgaHallg);
+		$("#filter_Ciklus").change(vizsgaHallg);
 	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
