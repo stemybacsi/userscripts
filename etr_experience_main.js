@@ -61,6 +61,7 @@ if (oldal == "VizsgaHallg") {
 
 function filterReload() {
 	var tmpText = $('#hallg_ker_info_sav').text();
+	console.log("filterReload: " + tmpText);
 	if (filterText == tmpText) {
 		console.log("javit filterReload");
 		setTimeout(filterReload, 100);
