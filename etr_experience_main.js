@@ -5,6 +5,9 @@ var aloldal = urlArray[1];
 if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
+	$(document).ready(function() {
+		$("#szur_gomb_a").click(vizsgaHallg);
+	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
 	$(document).ready(function() {
@@ -54,6 +57,7 @@ if (oldal == "VizsgaHallg") {
 function vizsgaHallg() {
 	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
 	if (kurzus_lista.length == 0) {
+		console.log("javit vizsgaHallg");
 		setTimeout(vizsgaHallg, 100);
 	} else {
 		$.each(kurzus_lista, function(ind, el) {
@@ -80,21 +84,21 @@ function vizsgaHallg() {
 }
 
 function kurzLista() {
-	console.log("kurzLista");
-	var javit = false;
-	$.each($('.kurz_ul .vegleges_kurz'), function(ind, el) {
-		var kurznev = $(el).find('td').eq(2);
-		var kurznev_temp = kurznev.clone();
-		kurznev_temp.find('br').remove();
-		kurznev_temp.find('span').remove();
-		var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
-		var kurztelj = $(el).find('.utolso_telj');
-		if (kurznev_str == "Tehetséggondozás: Programozás I.") {
-			kurztelj.html("Ko: 2");
-			javit = true;
-		}
-	});
-	if (!javit) {
+	var kurzus_lista = $('.kurz_ul .vegleges_kurz');
+	if (kurzus_lista.length == 0) {
+		console.log("javit kurzLista");
 		setTimeout(kurzLista, 100);
+	} else {
+		$.each(kurzus_lista, function(ind, el) {
+			var kurznev = $(el).find('td').eq(2);
+			var kurznev_temp = kurznev.clone();
+			kurznev_temp.find('br').remove();
+			kurznev_temp.find('span').remove();
+			var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
+			var kurztelj = $(el).find('.utolso_telj');
+			if (kurznev_str == "Tehetséggondozás: Programozás I.") {
+				kurztelj.html("Ko: 2");
+			}
+		});
 	}
 }
