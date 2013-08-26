@@ -8,7 +8,7 @@ if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
 	$(document).ready(function() {
-		$("#filter_Ciklus").change(vizsgaHallg);
+		$("#szur_gomb_a").click(vizsgaHallg);
 	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
@@ -84,6 +84,7 @@ function vizsgaHallg() {
 				kurztelj_sor.removeClass("piros").addClass("zold");
 				kurzcim.removeClass("piros").addClass("zold");
 				kurzcim.find('.help').attr("title", "A kurzus teljesítve van.");
+				kurzcim.find('.utolso_telj').html("Utolsó teljesítés: Ko: 2 ");
 				kurztelj_tolig.removeClass("piros").addClass("zold");
 				kurztelj_tolig.find('.help').attr("title", "Sikeresen teljesített vizsga");
 			}
@@ -92,8 +93,11 @@ function vizsgaHallg() {
 }
 
 function kurzLista() {
-	var tmpText = $('.kurz_ul').text();
 	var kurzus_lista = $('.kurz_ul .vegleges_kurz');
+	var tmpText = "";
+	if (kurzus_lista.length > 0) {
+		tmpText = $(kurzus_lista[0]).text();
+	}
 	console.log("kurzLista: " + kurzus_lista.length);
 	if (kurzus_lista.length == 0 || kurzListaText == tmpText) {
 		console.log("javit kurzLista");
