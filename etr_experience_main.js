@@ -1,6 +1,8 @@
 var urlArray = window.location.href.split('/etr/')[1].split('/');
 var oldal = urlArray[0];
 var aloldal = urlArray[1];
+var vizsgaHallgText = "";
+var kurzListaText = "";
 //Melyik oldalon vagyunk
 if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
@@ -55,12 +57,14 @@ if (oldal == "VizsgaHallg") {
 }
 
 function vizsgaHallg() {
+	var tmpText = $('#hvl_kurzus_lista').text();
 	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
 	console.log("vizsgaHallg: " + kurzus_lista.length);
-	if (kurzus_lista.length == 0) {
+	if (kurzus_lista.length == 0 || vizsgaHallgText == tmpText) {
 		console.log("javit vizsgaHallg");
 		setTimeout(vizsgaHallg, 100);
 	} else {
+		vizsgaHallgText = tmpText;
 		$.each(kurzus_lista, function(ind, el) {
 			var kurzcim = $(el).find('.kurzus_div_head');
 			var kurznev = kurzcim.find('b');
@@ -85,12 +89,14 @@ function vizsgaHallg() {
 }
 
 function kurzLista() {
+	var tmpText = $('.kurz_ul').text();
 	var kurzus_lista = $('.kurz_ul .vegleges_kurz');
 	console.log("kurzLista: " + kurzus_lista.length);
-	if (kurzus_lista.length == 0) {
+	if (kurzus_lista.length == 0 || kurzListaText == tmpText) {
 		console.log("javit kurzLista");
 		setTimeout(kurzLista, 100);
 	} else {
+		kurzListaText = tmpText;
 		$.each(kurzus_lista, function(ind, el) {
 			var kurznev = $(el).find('td').eq(2);
 			var kurznev_temp = kurznev.clone();
