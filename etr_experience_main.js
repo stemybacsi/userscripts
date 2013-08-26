@@ -3,12 +3,22 @@ var oldal = urlArray[0];
 var aloldal = urlArray[1];
 var vizsgaHallgText = "";
 var kurzListaText = "";
+var szurGomb = "";
+
+function szures() {
+	eval(szurGomb);
+	vizsgaHallg();
+}
+
 //Melyik oldalon vagyunk
 if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
 	$(document).ready(function() {
-		$("#szur_gomb_a").click(vizsgaHallg);
+		var szg = $("#szur_gomb_a");
+		szurGomb = szg.attr("onclick");
+		console.log(szurGomb);
+		szg.attr("onclick", "szures()");
 	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
