@@ -57,14 +57,13 @@ if (oldal == "VizsgaHallg") {
 }
 
 function vizsgaHallg() {
-	var tmpText = $('#hvl_kurzus_lista').text();
 	var kurzus_lista = $('#hvl_kurzus_lista .kurzus_div');
 	console.log("vizsgaHallg: " + kurzus_lista.length);
-	if (kurzus_lista.length == 0 || vizsgaHallgText == tmpText) {
+	if (kurzus_lista.length == 0 || vizsgaHallgText == kurzus_lista[0].text()) {
 		console.log("javit vizsgaHallg");
 		setTimeout(vizsgaHallg, 100);
 	} else {
-		vizsgaHallgText = tmpText;
+		vizsgaHallgText = kurzus_lista[0].text();
 		$.each(kurzus_lista, function(ind, el) {
 			var kurzcim = $(el).find('.kurzus_div_head');
 			var kurznev = kurzcim.find('b');
