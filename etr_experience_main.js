@@ -10,8 +10,7 @@ if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
 	$(document).ready(function() {
-		$("#szur_gomb_a").click(vizsgaHallg);
-		$("#filter_Ciklus").change(filterReload);
+		filterReload();
 	});
 } else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
 	kurzLista();
@@ -62,8 +61,6 @@ if (oldal == "VizsgaHallg") {
 function filterReload() {
 	var tmpText = $('#hallg_ker_info_sav a').text();
 	console.log("filterReload: " + tmpText);
-	console.log($("#szur_gomb_a"));
-	console.log($("#filter_Ciklus"));
 	if (filterText == tmpText) {
 		console.log("javit filterReload");
 		setTimeout(filterReload, 100);
