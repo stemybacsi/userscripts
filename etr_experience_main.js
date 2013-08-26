@@ -1,22 +1,18 @@
-var urlArray = window.location.href.split('/etr/');
+var urlArray = window.location.href.split('/etr/')[1].split('/');
+var oldal = urlArray[0];
+var aloldal = urlArray[1];
 //Melyik oldalon vagyunk
-if (urlArray[1] == "VizsgaHallg") {
+if (oldal == "VizsgaHallg") {
 	//Vizsgajelentkezés
 	vizsgaHallg();
+} else if (oldal == "KurzusFelvetel" && (aloldal == "KurzusLista" || aloldal == "Kurzuslista")) {
+	kurzLista();
+	$(document).ready(function() {
+		$("#filter_Ciklus").change(kurzLista);
+	});
 } else {
 	//Kurzuslista
 	$(document).ready(function() {
-		$.each($('.kurz_ul .vegleges_kurz'), function(ind, el) {
-			var kurznev = $(el).find('td').eq(2);
-			var kurznev_temp = kurznev.clone();
-			kurznev_temp.find('br').remove();
-			kurznev_temp.find('span').remove();
-			var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
-			var kurztelj = $(el).find('.utolso_telj');
-			if (kurznev_str == "Tehetséggondozás: Programozás I.") {
-				kurztelj.html("Ko: 2");
-			}
-		});
 		$.each($('#kurzus_atjel table'), function(table_ind, table_el) {
 			var tabla = $(table_el);
 			$.each(tabla.find('tr'), function(tr_ind, tr_el) {
@@ -80,5 +76,25 @@ function vizsgaHallg() {
 				kurztelj_tolig.find('.help').attr("title", "Sikeresen teljesített vizsga");
 			}
 		});
+	}
+}
+
+function kurzLista() {
+	console.log("kurzLista");
+	var javit = false;
+	$.each($('.kurz_ul .vegleges_kurz'), function(ind, el) {
+		var kurznev = $(el).find('td').eq(2);
+		var kurznev_temp = kurznev.clone();
+		kurznev_temp.find('br').remove();
+		kurznev_temp.find('span').remove();
+		var kurznev_str = kurznev_temp.text().replace('\n', '').trim();
+		var kurztelj = $(el).find('.utolso_telj');
+		if (kurznev_str == "Tehetséggondozás: Programozás I.") {
+			kurztelj.html("Ko: 2");
+			javit = true;
+		}
+	});
+	if (!javit) {
+		setTimeout(kurzLista, 100);
 	}
 }

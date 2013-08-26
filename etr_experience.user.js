@@ -1,8 +1,6 @@
 // ==UserScript==
 // @name         Flash Player
 // @namespace    jQueryFlash
-// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/KurzusLista
-// @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/Kurzuslista
 // @include      https://*etr.u-szeged.hu/etr/VizsgaHallg
 // @include      https://*etr.u-szeged.hu/etr/KurzusFelvetel/*
 // @author       Nobody
